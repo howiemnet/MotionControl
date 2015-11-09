@@ -1,0 +1,672 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		070BDAFE1BD7D86200D937BC /* TrajectoryHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076BFE0D1B5FA22F00DA22F1 /* TrajectoryHandler.swift */; };
+		0723391B1BDAB16D008542EB /* 7 Segment.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 07CCB4A41B7B327500278A4A /* 7 Segment.ttf */; };
+		076E45F11B67832E00EB9701 /* ChannelTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076E45F01B67832E00EB9701 /* ChannelTableView.swift */; };
+		076E45F31B67848C00EB9701 /* SequenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076E45F21B67848C00EB9701 /* SequenceController.swift */; };
+		0777D7191B5E2BD9007B9433 /* ExecutiveController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0777D7181B5E2BD9007B9433 /* ExecutiveController.swift */; };
+		0777D71C1B5E2C45007B9433 /* ExecutiveStateData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0777D71B1B5E2C45007B9433 /* ExecutiveStateData.swift */; };
+		0777D7201B5E9325007B9433 /* HardwareInterfaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0777D71F1B5E9325007B9433 /* HardwareInterfaces.swift */; };
+		077C574F1BEA2E0B00FB6E21 /* ysocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077C574A1BEA2E0B00FB6E21 /* ysocket.swift */; };
+		077C57501BEA2E0B00FB6E21 /* ytcpsocket.c in Sources */ = {isa = PBXBuildFile; fileRef = 077C574B1BEA2E0B00FB6E21 /* ytcpsocket.c */; };
+		077C57511BEA2E0B00FB6E21 /* ytcpsocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077C574C1BEA2E0B00FB6E21 /* ytcpsocket.swift */; };
+		077C57521BEA2E0B00FB6E21 /* yudpsocket.c in Sources */ = {isa = PBXBuildFile; fileRef = 077C574D1BEA2E0B00FB6E21 /* yudpsocket.c */; };
+		077C57531BEA2E0B00FB6E21 /* yudpsocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077C574E1BEA2E0B00FB6E21 /* yudpsocket.swift */; };
+		077C57551BEA2EBB00FB6E21 /* UDPServerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077C57541BEA2EBB00FB6E21 /* UDPServerController.swift */; };
+		078C362E1B668738003A0AAD /* SequencerTableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078C362D1B668738003A0AAD /* SequencerTableCellView.swift */; };
+		078C36321B668865003A0AAD /* Keyframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078C36311B668865003A0AAD /* Keyframe.swift */; };
+		07A564141BD0095B00D6C27B /* hid.c in Sources */ = {isa = PBXBuildFile; fileRef = 07A564111BD0095B00D6C27B /* hid.c */; };
+		07A564191BD0241A00D6C27B /* ChannelHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A564181BD0241A00D6C27B /* ChannelHandler.swift */; };
+		07A5641B1BD0244100D6C27B /* CommsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A5641A1BD0244100D6C27B /* CommsHandler.swift */; };
+		07A5641E1BD0253000D6C27B /* ChannelDataLive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A5641C1BD0253000D6C27B /* ChannelDataLive.swift */; };
+		07A5641F1BD0253000D6C27B /* ChannelDataPersistent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A5641D1BD0253000D6C27B /* ChannelDataPersistent.swift */; };
+		07A564211BD0264800D6C27B /* ChannelLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A564201BD0264800D6C27B /* ChannelLibrary.swift */; };
+		07A564231BD0279000D6C27B /* InterfaceLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A564221BD0279000D6C27B /* InterfaceLibrary.swift */; };
+		07A690281BD7BCCB00F99AAA /* DeviceSetupCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A690271BD7BCCB00F99AAA /* DeviceSetupCellView.swift */; };
+		07ACB6DC1BD0EF9D003E76E4 /* ORSSerialPort.m in Sources */ = {isa = PBXBuildFile; fileRef = 07ACB6D71BD0EF9D003E76E4 /* ORSSerialPort.m */; };
+		07ACB6DD1BD0EF9D003E76E4 /* ORSSerialPortManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 07ACB6D91BD0EF9D003E76E4 /* ORSSerialPortManager.m */; };
+		07ACB6DE1BD0EF9D003E76E4 /* ORSSerialRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 07ACB6DB1BD0EF9D003E76E4 /* ORSSerialRequest.m */; };
+		07ACB6E21BD130C6003E76E4 /* ChannelDataSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07ACB6E11BD130C6003E76E4 /* ChannelDataSettings.swift */; };
+		07ACB6E71BD18BC0003E76E4 /* BlenderPlaybackController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07ACB6E61BD18BC0003E76E4 /* BlenderPlaybackController.swift */; };
+		07B407441B60F29700CD0C9E /* SerialInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B407431B60F29700CD0C9E /* SerialInterface.swift */; };
+		07C937F01BD68590005B5B0D /* MessageTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C937EF1BD68590005B5B0D /* MessageTypes.swift */; };
+		07CCB49F1B7A57E200278A4A /* MimicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CCB49E1B7A57E200278A4A /* MimicView.swift */; };
+		07CCB4A11B7A7E2000278A4A /* CustomSliderClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CCB4A01B7A7E2000278A4A /* CustomSliderClasses.swift */; };
+		07CCB4A31B7B20E100278A4A /* tinySliderThumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 07CCB4A21B7B20E100278A4A /* tinySliderThumb.png */; };
+		07D617151BDF835700B80668 /* CSwiftV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D617141BDF835700B80668 /* CSwiftV.swift */; };
+		07D617171BDFC84A00B80668 /* BlenderGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D617161BDFC84A00B80668 /* BlenderGraphView.swift */; };
+		07DD6E2F1BD7A0EE00196CA1 /* DeviceSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DD6E2E1BD7A0EE00196CA1 /* DeviceSetupViewController.swift */; };
+		07E6BEE61B8624A500BB967E /* LensHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E6BEE51B8624A500BB967E /* LensHandler.swift */; };
+		07FC5B141BBB0B02002CF38C /* ChannelCellViewLens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FC5B131BBB0B02002CF38C /* ChannelCellViewLens.swift */; };
+		E7364FA31B58ED550066632C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7364FA21B58ED550066632C /* AppDelegate.swift */; };
+		E7364FA51B58ED550066632C /* MainWindowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7364FA41B58ED550066632C /* MainWindowViewController.swift */; };
+		E7364FA71B58ED550066632C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7364FA61B58ED550066632C /* Images.xcassets */; };
+		E7364FAA1B58ED550066632C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7364FA81B58ED550066632C /* Main.storyboard */; };
+		E7364FB61B58ED550066632C /* MotionControlTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7364FB51B58ED550066632C /* MotionControlTests.swift */; };
+		E7364FC01B58F1190066632C /* ChannelCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7364FBF1B58F1190066632C /* ChannelCellView.swift */; };
+		E7364FC21B58F4450066632C /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7364FC11B58F4450066632C /* Channel.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E7364FB01B58ED550066632C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E7364F951B58ED550066632C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E7364F9C1B58ED550066632C;
+			remoteInfo = MotionControl;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		076BFE0D1B5FA22F00DA22F1 /* TrajectoryHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrajectoryHandler.swift; sourceTree = "<group>"; };
+		076E45F01B67832E00EB9701 /* ChannelTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelTableView.swift; sourceTree = "<group>"; };
+		076E45F21B67848C00EB9701 /* SequenceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SequenceController.swift; sourceTree = "<group>"; };
+		0777D7151B5E296E007B9433 /* ORS-bridging-header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ORS-bridging-header.h"; sourceTree = "<group>"; };
+		0777D7181B5E2BD9007B9433 /* ExecutiveController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExecutiveController.swift; sourceTree = "<group>"; };
+		0777D71B1B5E2C45007B9433 /* ExecutiveStateData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExecutiveStateData.swift; sourceTree = "<group>"; };
+		0777D71F1B5E9325007B9433 /* HardwareInterfaces.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HardwareInterfaces.swift; sourceTree = "<group>"; };
+		077C574A1BEA2E0B00FB6E21 /* ysocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ysocket.swift; sourceTree = "<group>"; };
+		077C574B1BEA2E0B00FB6E21 /* ytcpsocket.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ytcpsocket.c; sourceTree = "<group>"; };
+		077C574C1BEA2E0B00FB6E21 /* ytcpsocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ytcpsocket.swift; sourceTree = "<group>"; };
+		077C574D1BEA2E0B00FB6E21 /* yudpsocket.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yudpsocket.c; sourceTree = "<group>"; };
+		077C574E1BEA2E0B00FB6E21 /* yudpsocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = yudpsocket.swift; sourceTree = "<group>"; };
+		077C57541BEA2EBB00FB6E21 /* UDPServerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UDPServerController.swift; sourceTree = "<group>"; };
+		078C362D1B668738003A0AAD /* SequencerTableCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SequencerTableCellView.swift; sourceTree = "<group>"; };
+		078C36311B668865003A0AAD /* Keyframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keyframe.swift; sourceTree = "<group>"; };
+		07A564111BD0095B00D6C27B /* hid.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = hid.c; sourceTree = "<group>"; };
+		07A564121BD0095B00D6C27B /* hid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hid.h; sourceTree = "<group>"; };
+		07A564181BD0241A00D6C27B /* ChannelHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelHandler.swift; sourceTree = "<group>"; };
+		07A5641A1BD0244100D6C27B /* CommsHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommsHandler.swift; sourceTree = "<group>"; };
+		07A5641C1BD0253000D6C27B /* ChannelDataLive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelDataLive.swift; sourceTree = "<group>"; };
+		07A5641D1BD0253000D6C27B /* ChannelDataPersistent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelDataPersistent.swift; sourceTree = "<group>"; };
+		07A564201BD0264800D6C27B /* ChannelLibrary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelLibrary.swift; sourceTree = "<group>"; };
+		07A564221BD0279000D6C27B /* InterfaceLibrary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterfaceLibrary.swift; sourceTree = "<group>"; };
+		07A564241BD0533800D6C27B /* Readme.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Readme.txt; sourceTree = "<group>"; };
+		07A690271BD7BCCB00F99AAA /* DeviceSetupCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceSetupCellView.swift; sourceTree = "<group>"; };
+		07ACB6D61BD0EF9D003E76E4 /* ORSSerialPort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORSSerialPort.h; path = MotionControl/ORSSerialPort.h; sourceTree = SOURCE_ROOT; };
+		07ACB6D71BD0EF9D003E76E4 /* ORSSerialPort.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORSSerialPort.m; path = MotionControl/ORSSerialPort.m; sourceTree = SOURCE_ROOT; };
+		07ACB6D81BD0EF9D003E76E4 /* ORSSerialPortManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORSSerialPortManager.h; path = MotionControl/ORSSerialPortManager.h; sourceTree = SOURCE_ROOT; };
+		07ACB6D91BD0EF9D003E76E4 /* ORSSerialPortManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORSSerialPortManager.m; path = MotionControl/ORSSerialPortManager.m; sourceTree = SOURCE_ROOT; };
+		07ACB6DA1BD0EF9D003E76E4 /* ORSSerialRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORSSerialRequest.h; path = MotionControl/ORSSerialRequest.h; sourceTree = SOURCE_ROOT; };
+		07ACB6DB1BD0EF9D003E76E4 /* ORSSerialRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORSSerialRequest.m; path = MotionControl/ORSSerialRequest.m; sourceTree = SOURCE_ROOT; };
+		07ACB6E11BD130C6003E76E4 /* ChannelDataSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelDataSettings.swift; sourceTree = "<group>"; };
+		07ACB6E61BD18BC0003E76E4 /* BlenderPlaybackController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlenderPlaybackController.swift; sourceTree = "<group>"; };
+		07B407431B60F29700CD0C9E /* SerialInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SerialInterface.swift; sourceTree = "<group>"; };
+		07C937EF1BD68590005B5B0D /* MessageTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTypes.swift; sourceTree = "<group>"; };
+		07CCB49E1B7A57E200278A4A /* MimicView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MimicView.swift; sourceTree = "<group>"; };
+		07CCB4A01B7A7E2000278A4A /* CustomSliderClasses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSliderClasses.swift; sourceTree = "<group>"; };
+		07CCB4A21B7B20E100278A4A /* tinySliderThumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tinySliderThumb.png; sourceTree = "<group>"; };
+		07CCB4A41B7B327500278A4A /* 7 Segment.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "7 Segment.ttf"; sourceTree = "<group>"; };
+		07D617141BDF835700B80668 /* CSwiftV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSwiftV.swift; sourceTree = "<group>"; };
+		07D617161BDFC84A00B80668 /* BlenderGraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlenderGraphView.swift; sourceTree = "<group>"; };
+		07D617181BE114E100B80668 /* Old trajectory stuff.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Old trajectory stuff.swift"; sourceTree = "<group>"; };
+		07DD6E2E1BD7A0EE00196CA1 /* DeviceSetupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceSetupViewController.swift; sourceTree = "<group>"; };
+		07E6BEE51B8624A500BB967E /* LensHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LensHandler.swift; sourceTree = "<group>"; };
+		07FC5B131BBB0B02002CF38C /* ChannelCellViewLens.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelCellViewLens.swift; sourceTree = "<group>"; };
+		E7364F9D1B58ED550066632C /* MotionControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MotionControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E7364FA11B58ED550066632C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E7364FA21B58ED550066632C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E7364FA41B58ED550066632C /* MainWindowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowViewController.swift; sourceTree = "<group>"; };
+		E7364FA61B58ED550066632C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		E7364FA91B58ED550066632C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E7364FAF1B58ED550066632C /* MotionControlTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MotionControlTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E7364FB41B58ED550066632C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E7364FB51B58ED550066632C /* MotionControlTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionControlTests.swift; sourceTree = "<group>"; };
+		E7364FBF1B58F1190066632C /* ChannelCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelCellView.swift; sourceTree = "<group>"; };
+		E7364FC11B58F4450066632C /* Channel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E7364F9A1B58ED550066632C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E7364FAC1B58ED550066632C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0777D71A1B5E2C0D007B9433 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				07ACB6E11BD130C6003E76E4 /* ChannelDataSettings.swift */,
+				07A5641C1BD0253000D6C27B /* ChannelDataLive.swift */,
+				07A5641D1BD0253000D6C27B /* ChannelDataPersistent.swift */,
+				E7364FC11B58F4450066632C /* Channel.swift */,
+				0777D71B1B5E2C45007B9433 /* ExecutiveStateData.swift */,
+				078C36311B668865003A0AAD /* Keyframe.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		0777D71D1B5E2D30007B9433 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				E7364FA41B58ED550066632C /* MainWindowViewController.swift */,
+				077C84751BCE8AC9005C42B2 /* Sequencer */,
+				077C84741BCE8A9E005C42B2 /* Channel strips */,
+				07CCB49E1B7A57E200278A4A /* MimicView.swift */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		0777D71E1B5E2D53007B9433 /* Communications */ = {
+			isa = PBXGroup;
+			children = (
+				077C57491BEA2E0B00FB6E21 /* ysocket */,
+				07C937EF1BD68590005B5B0D /* MessageTypes.swift */,
+				07A564111BD0095B00D6C27B /* hid.c */,
+				07A564121BD0095B00D6C27B /* hid.h */,
+				07D14C361BCE9BA20039493C /* ORSSerialPort */,
+				0777D71F1B5E9325007B9433 /* HardwareInterfaces.swift */,
+				07B407431B60F29700CD0C9E /* SerialInterface.swift */,
+			);
+			name = Communications;
+			sourceTree = "<group>";
+		};
+		077C57491BEA2E0B00FB6E21 /* ysocket */ = {
+			isa = PBXGroup;
+			children = (
+				077C574A1BEA2E0B00FB6E21 /* ysocket.swift */,
+				077C574B1BEA2E0B00FB6E21 /* ytcpsocket.c */,
+				077C574C1BEA2E0B00FB6E21 /* ytcpsocket.swift */,
+				077C574D1BEA2E0B00FB6E21 /* yudpsocket.c */,
+				077C574E1BEA2E0B00FB6E21 /* yudpsocket.swift */,
+				077C57541BEA2EBB00FB6E21 /* UDPServerController.swift */,
+			);
+			path = ysocket;
+			sourceTree = "<group>";
+		};
+		077C84731BCE8A91005C42B2 /* Brains */ = {
+			isa = PBXGroup;
+			children = (
+				07E6BEE51B8624A500BB967E /* LensHandler.swift */,
+				0777D7181B5E2BD9007B9433 /* ExecutiveController.swift */,
+				076BFE0D1B5FA22F00DA22F1 /* TrajectoryHandler.swift */,
+				07D617181BE114E100B80668 /* Old trajectory stuff.swift */,
+				07A564181BD0241A00D6C27B /* ChannelHandler.swift */,
+				07A5641A1BD0244100D6C27B /* CommsHandler.swift */,
+			);
+			name = Brains;
+			sourceTree = "<group>";
+		};
+		077C84741BCE8A9E005C42B2 /* Channel strips */ = {
+			isa = PBXGroup;
+			children = (
+				07CCB4A01B7A7E2000278A4A /* CustomSliderClasses.swift */,
+				076E45F01B67832E00EB9701 /* ChannelTableView.swift */,
+				E7364FBF1B58F1190066632C /* ChannelCellView.swift */,
+				07FC5B131BBB0B02002CF38C /* ChannelCellViewLens.swift */,
+			);
+			name = "Channel strips";
+			sourceTree = "<group>";
+		};
+		077C84751BCE8AC9005C42B2 /* Sequencer */ = {
+			isa = PBXGroup;
+			children = (
+				07ACB6E61BD18BC0003E76E4 /* BlenderPlaybackController.swift */,
+				076E45F21B67848C00EB9701 /* SequenceController.swift */,
+				078C362D1B668738003A0AAD /* SequencerTableCellView.swift */,
+			);
+			name = Sequencer;
+			sourceTree = "<group>";
+		};
+		077C84761BCE8B6B005C42B2 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				07A564201BD0264800D6C27B /* ChannelLibrary.swift */,
+				07A564221BD0279000D6C27B /* InterfaceLibrary.swift */,
+			);
+			name = Libraries;
+			sourceTree = "<group>";
+		};
+		07D14C361BCE9BA20039493C /* ORSSerialPort */ = {
+			isa = PBXGroup;
+			children = (
+				07ACB6D61BD0EF9D003E76E4 /* ORSSerialPort.h */,
+				07ACB6D71BD0EF9D003E76E4 /* ORSSerialPort.m */,
+				07ACB6D81BD0EF9D003E76E4 /* ORSSerialPortManager.h */,
+				07ACB6D91BD0EF9D003E76E4 /* ORSSerialPortManager.m */,
+				07ACB6DA1BD0EF9D003E76E4 /* ORSSerialRequest.h */,
+				07ACB6DB1BD0EF9D003E76E4 /* ORSSerialRequest.m */,
+			);
+			name = ORSSerialPort;
+			path = ../Pods/ORSSerialPort;
+			sourceTree = "<group>";
+		};
+		E7364F941B58ED550066632C = {
+			isa = PBXGroup;
+			children = (
+				E7364F9F1B58ED550066632C /* MotionControl */,
+				E7364FB21B58ED550066632C /* MotionControlTests */,
+				E7364F9E1B58ED550066632C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E7364F9E1B58ED550066632C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E7364F9D1B58ED550066632C /* MotionControl.app */,
+				E7364FAF1B58ED550066632C /* MotionControlTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E7364F9F1B58ED550066632C /* MotionControl */ = {
+			isa = PBXGroup;
+			children = (
+				E7364FA81B58ED550066632C /* Main.storyboard */,
+				07D617161BDFC84A00B80668 /* BlenderGraphView.swift */,
+				07D617141BDF835700B80668 /* CSwiftV.swift */,
+				07DD6E2E1BD7A0EE00196CA1 /* DeviceSetupViewController.swift */,
+				07A690271BD7BCCB00F99AAA /* DeviceSetupCellView.swift */,
+				077C84761BCE8B6B005C42B2 /* Libraries */,
+				0777D71E1B5E2D53007B9433 /* Communications */,
+				0777D71D1B5E2D30007B9433 /* UI */,
+				0777D71A1B5E2C0D007B9433 /* Model */,
+				077C84731BCE8A91005C42B2 /* Brains */,
+				E7364FA01B58ED550066632C /* Supporting Files */,
+				07A564241BD0533800D6C27B /* Readme.txt */,
+			);
+			path = MotionControl;
+			sourceTree = "<group>";
+		};
+		E7364FA01B58ED550066632C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				07CCB4A41B7B327500278A4A /* 7 Segment.ttf */,
+				0777D7151B5E296E007B9433 /* ORS-bridging-header.h */,
+				E7364FA21B58ED550066632C /* AppDelegate.swift */,
+				E7364FA61B58ED550066632C /* Images.xcassets */,
+				07CCB4A21B7B20E100278A4A /* tinySliderThumb.png */,
+				E7364FA11B58ED550066632C /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E7364FB21B58ED550066632C /* MotionControlTests */ = {
+			isa = PBXGroup;
+			children = (
+				E7364FB51B58ED550066632C /* MotionControlTests.swift */,
+				E7364FB31B58ED550066632C /* Supporting Files */,
+			);
+			path = MotionControlTests;
+			sourceTree = "<group>";
+		};
+		E7364FB31B58ED550066632C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E7364FB41B58ED550066632C /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E7364F9C1B58ED550066632C /* MotionControl */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E7364FB91B58ED550066632C /* Build configuration list for PBXNativeTarget "MotionControl" */;
+			buildPhases = (
+				E7364F991B58ED550066632C /* Sources */,
+				E7364F9A1B58ED550066632C /* Frameworks */,
+				E7364F9B1B58ED550066632C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MotionControl;
+			productName = MotionControl;
+			productReference = E7364F9D1B58ED550066632C /* MotionControl.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E7364FAE1B58ED550066632C /* MotionControlTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E7364FBC1B58ED550066632C /* Build configuration list for PBXNativeTarget "MotionControlTests" */;
+			buildPhases = (
+				E7364FAB1B58ED550066632C /* Sources */,
+				E7364FAC1B58ED550066632C /* Frameworks */,
+				E7364FAD1B58ED550066632C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E7364FB11B58ED550066632C /* PBXTargetDependency */,
+			);
+			name = MotionControlTests;
+			productName = MotionControlTests;
+			productReference = E7364FAF1B58ED550066632C /* MotionControlTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E7364F951B58ED550066632C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = slartibartfist;
+				TargetAttributes = {
+					E7364F9C1B58ED550066632C = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					E7364FAE1B58ED550066632C = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = E7364F9C1B58ED550066632C;
+					};
+				};
+			};
+			buildConfigurationList = E7364F981B58ED550066632C /* Build configuration list for PBXProject "MotionControl" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E7364F941B58ED550066632C;
+			productRefGroup = E7364F9E1B58ED550066632C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E7364F9C1B58ED550066632C /* MotionControl */,
+				E7364FAE1B58ED550066632C /* MotionControlTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E7364F9B1B58ED550066632C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E7364FA71B58ED550066632C /* Images.xcassets in Resources */,
+				E7364FAA1B58ED550066632C /* Main.storyboard in Resources */,
+				07CCB4A31B7B20E100278A4A /* tinySliderThumb.png in Resources */,
+				0723391B1BDAB16D008542EB /* 7 Segment.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E7364FAD1B58ED550066632C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E7364F991B58ED550066632C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07C937F01BD68590005B5B0D /* MessageTypes.swift in Sources */,
+				07ACB6E21BD130C6003E76E4 /* ChannelDataSettings.swift in Sources */,
+				076E45F31B67848C00EB9701 /* SequenceController.swift in Sources */,
+				E7364FA51B58ED550066632C /* MainWindowViewController.swift in Sources */,
+				078C36321B668865003A0AAD /* Keyframe.swift in Sources */,
+				078C362E1B668738003A0AAD /* SequencerTableCellView.swift in Sources */,
+				07ACB6E71BD18BC0003E76E4 /* BlenderPlaybackController.swift in Sources */,
+				07D617151BDF835700B80668 /* CSwiftV.swift in Sources */,
+				077C574F1BEA2E0B00FB6E21 /* ysocket.swift in Sources */,
+				07FC5B141BBB0B02002CF38C /* ChannelCellViewLens.swift in Sources */,
+				076E45F11B67832E00EB9701 /* ChannelTableView.swift in Sources */,
+				07ACB6DC1BD0EF9D003E76E4 /* ORSSerialPort.m in Sources */,
+				07A5641F1BD0253000D6C27B /* ChannelDataPersistent.swift in Sources */,
+				E7364FC21B58F4450066632C /* Channel.swift in Sources */,
+				07ACB6DE1BD0EF9D003E76E4 /* ORSSerialRequest.m in Sources */,
+				07D617171BDFC84A00B80668 /* BlenderGraphView.swift in Sources */,
+				077C57551BEA2EBB00FB6E21 /* UDPServerController.swift in Sources */,
+				077C57511BEA2E0B00FB6E21 /* ytcpsocket.swift in Sources */,
+				07CCB49F1B7A57E200278A4A /* MimicView.swift in Sources */,
+				07E6BEE61B8624A500BB967E /* LensHandler.swift in Sources */,
+				07A564191BD0241A00D6C27B /* ChannelHandler.swift in Sources */,
+				07A564141BD0095B00D6C27B /* hid.c in Sources */,
+				E7364FC01B58F1190066632C /* ChannelCellView.swift in Sources */,
+				077C57521BEA2E0B00FB6E21 /* yudpsocket.c in Sources */,
+				07A564231BD0279000D6C27B /* InterfaceLibrary.swift in Sources */,
+				07A690281BD7BCCB00F99AAA /* DeviceSetupCellView.swift in Sources */,
+				0777D7191B5E2BD9007B9433 /* ExecutiveController.swift in Sources */,
+				0777D71C1B5E2C45007B9433 /* ExecutiveStateData.swift in Sources */,
+				0777D7201B5E9325007B9433 /* HardwareInterfaces.swift in Sources */,
+				070BDAFE1BD7D86200D937BC /* TrajectoryHandler.swift in Sources */,
+				07A5641E1BD0253000D6C27B /* ChannelDataLive.swift in Sources */,
+				07B407441B60F29700CD0C9E /* SerialInterface.swift in Sources */,
+				07DD6E2F1BD7A0EE00196CA1 /* DeviceSetupViewController.swift in Sources */,
+				07A5641B1BD0244100D6C27B /* CommsHandler.swift in Sources */,
+				07CCB4A11B7A7E2000278A4A /* CustomSliderClasses.swift in Sources */,
+				E7364FA31B58ED550066632C /* AppDelegate.swift in Sources */,
+				07A564211BD0264800D6C27B /* ChannelLibrary.swift in Sources */,
+				077C57531BEA2E0B00FB6E21 /* yudpsocket.swift in Sources */,
+				077C57501BEA2E0B00FB6E21 /* ytcpsocket.c in Sources */,
+				07ACB6DD1BD0EF9D003E76E4 /* ORSSerialPortManager.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E7364FAB1B58ED550066632C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E7364FB61B58ED550066632C /* MotionControlTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E7364FB11B58ED550066632C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E7364F9C1B58ED550066632C /* MotionControl */;
+			targetProxy = E7364FB01B58ED550066632C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E7364FA81B58ED550066632C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E7364FA91B58ED550066632C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E7364FB71B58ED550066632C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OBJC_BRIDGING_HEADER = "MotionControl/ORS-bridging-header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E7364FB81B58ED550066632C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				SWIFT_OBJC_BRIDGING_HEADER = "MotionControl/ORS-bridging-header.h";
+			};
+			name = Release;
+		};
+		E7364FBA1B58ED550066632C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = MotionControl/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.slartibartfist.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		E7364FBB1B58ED550066632C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = MotionControl/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.slartibartfist.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		E7364FBD1B58ED550066632C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = MotionControlTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.slartibartfist.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MotionControl.app/Contents/MacOS/MotionControl";
+			};
+			name = Debug;
+		};
+		E7364FBE1B58ED550066632C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = MotionControlTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.slartibartfist.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MotionControl.app/Contents/MacOS/MotionControl";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E7364F981B58ED550066632C /* Build configuration list for PBXProject "MotionControl" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E7364FB71B58ED550066632C /* Debug */,
+				E7364FB81B58ED550066632C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E7364FB91B58ED550066632C /* Build configuration list for PBXNativeTarget "MotionControl" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E7364FBA1B58ED550066632C /* Debug */,
+				E7364FBB1B58ED550066632C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E7364FBC1B58ED550066632C /* Build configuration list for PBXNativeTarget "MotionControlTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E7364FBD1B58ED550066632C /* Debug */,
+				E7364FBE1B58ED550066632C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E7364F951B58ED550066632C /* Project object */;
+}
