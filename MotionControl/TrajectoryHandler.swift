@@ -37,6 +37,8 @@ class TrajectoryHandler {
     
     var channel : Channel!
     
+    var channelHandler: ChannelHandler!
+    
     var liveData : ChannelDataLive
     var positionDesired = Double(0.0)
     var oldTargetPosition = 0.0
@@ -61,9 +63,10 @@ class TrajectoryHandler {
     
     
     
-    init(chan: Channel) {
+    init(chan: Channel, handler: ChannelHandler) {
         channel = chan
         liveData = channel.channelDataLive
+        channelHandler = handler
     }
     
     
@@ -203,6 +206,7 @@ class TrajectoryHandler {
             currentState = .StoppedAtTarget
             
         }
+        channelHandler!.latestFrameSent(currentFrame)
     }
     
     
@@ -263,6 +267,9 @@ class TrajectoryHandler {
         let targetDirection = (liveData.positionDesired >= liveData.positionActual)
         let currentDirection = (liveData.velocityCurrent >= 0.0)
         
+        let oldVelocity = liveData.velocityCurrent
+        
+        
         if liveData.positionDesired != oldTargetPosition {
             // reset some stuff here
         }
@@ -307,7 +314,7 @@ class TrajectoryHandler {
                     
                     // need to be sure we don't overshoot forwards
                     
-                    if distanceToTarget < liveData.velocityCurrent {
+                    if (abs(liveData.velocityCurrent) < channel.channelDataSettings.maximumAcceleration) && (distanceToTarget < liveData.velocityCurrent) {
                         liveData.velocityCurrent = distanceToTarget
                     }
                     
@@ -319,7 +326,7 @@ class TrajectoryHandler {
                     
                     //   deal with possibility of overshoot
                     
-                    if liveData.velocityCurrent < -distanceToTarget {
+                    if (abs(liveData.velocityCurrent) < channel.channelDataSettings.maximumAcceleration) && (liveData.velocityCurrent < -distanceToTarget) {
                         liveData.velocityCurrent = -distanceToTarget
                     }
                 }
@@ -353,7 +360,7 @@ class TrajectoryHandler {
                     //    Are going to overshoot?
                     // ---------------------------------------------
                     
-                    if abs(distanceToTarget - stoppingDistance) < 0.0 {
+                    if distanceToTarget - stoppingDistance < 0.0 {
                         
                         // ---------------------------------------------
                         //    Overshoot - so decellerate now
@@ -367,7 +374,7 @@ class TrajectoryHandler {
                             //    Check we won't overshoot the other way
                             // ---------------------------------------------
                             
-                            if distanceToTarget < liveData.velocityCurrent {
+                            if (abs(liveData.velocityCurrent) < channel.channelDataSettings.maximumAcceleration) && (distanceToTarget < liveData.velocityCurrent) {
                                 liveData.velocityCurrent = distanceToTarget
                             }
                             
@@ -379,7 +386,7 @@ class TrajectoryHandler {
                             //    Check we won't overshoot the other way
                             // ---------------------------------------------
                             
-                            if liveData.velocityCurrent < -distanceToTarget {
+                            if (abs(liveData.velocityCurrent) < channel.channelDataSettings.maximumAcceleration) && (liveData.velocityCurrent < -distanceToTarget) {
                                 liveData.velocityCurrent = -distanceToTarget
                             }
                         }
@@ -411,14 +418,14 @@ class TrajectoryHandler {
                             
                             finalDecel = true
                             
-                            var theDecelFrames = (distanceToTarget * 2) / currentSpeed
+                            let theDecelFrames = ceil((distanceToTarget * 2) / currentSpeed)
                             
                            // if theDecelFrames != floor(theDecelFrames) {
                               // there will be a remainder//  theDecelFrames += 1.0
                           //  }
                             //theDecelFrames = floor(theDecelFrames)
                             
-                            if (theDecelFrames < 1.0) {
+                            if (theDecelFrames <= 1.0) {
                                 if (targetDirection) {
                                     liveData.velocityCurrent = distanceToTarget
                                 } else {
@@ -533,6 +540,10 @@ class TrajectoryHandler {
                     }
                 }
             }
+        }
+        
+        if abs(liveData.velocityCurrent - oldVelocity) > channel.channelDataSettings.maximumAcceleration {
+            print ("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ acceleration exception: old vel \(oldVelocity) new vel \(liveData.velocityCurrent)")
         }
         
         liveData.positionActual += liveData.velocityCurrent

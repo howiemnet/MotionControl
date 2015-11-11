@@ -20,6 +20,7 @@
 		077C57521BEA2E0B00FB6E21 /* yudpsocket.c in Sources */ = {isa = PBXBuildFile; fileRef = 077C574D1BEA2E0B00FB6E21 /* yudpsocket.c */; };
 		077C57531BEA2E0B00FB6E21 /* yudpsocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077C574E1BEA2E0B00FB6E21 /* yudpsocket.swift */; };
 		077C57551BEA2EBB00FB6E21 /* UDPServerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077C57541BEA2EBB00FB6E21 /* UDPServerController.swift */; };
+		078A57711BF33FBE00DA1E3C /* RemoteDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078A57701BF33FBE00DA1E3C /* RemoteDisplay.swift */; };
 		078C362E1B668738003A0AAD /* SequencerTableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078C362D1B668738003A0AAD /* SequencerTableCellView.swift */; };
 		078C36321B668865003A0AAD /* Keyframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078C36311B668865003A0AAD /* Keyframe.swift */; };
 		07A564141BD0095B00D6C27B /* hid.c in Sources */ = {isa = PBXBuildFile; fileRef = 07A564111BD0095B00D6C27B /* hid.c */; };
@@ -78,6 +79,7 @@
 		077C574D1BEA2E0B00FB6E21 /* yudpsocket.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yudpsocket.c; sourceTree = "<group>"; };
 		077C574E1BEA2E0B00FB6E21 /* yudpsocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = yudpsocket.swift; sourceTree = "<group>"; };
 		077C57541BEA2EBB00FB6E21 /* UDPServerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UDPServerController.swift; sourceTree = "<group>"; };
+		078A57701BF33FBE00DA1E3C /* RemoteDisplay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteDisplay.swift; sourceTree = "<group>"; };
 		078C362D1B668738003A0AAD /* SequencerTableCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SequencerTableCellView.swift; sourceTree = "<group>"; };
 		078C36311B668865003A0AAD /* Keyframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keyframe.swift; sourceTree = "<group>"; };
 		07A564111BD0095B00D6C27B /* hid.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = hid.c; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 				07D14C361BCE9BA20039493C /* ORSSerialPort */,
 				0777D71F1B5E9325007B9433 /* HardwareInterfaces.swift */,
 				07B407431B60F29700CD0C9E /* SerialInterface.swift */,
+				078A57701BF33FBE00DA1E3C /* RemoteDisplay.swift */,
 			);
 			name = Communications;
 			sourceTree = "<group>";
@@ -433,6 +436,7 @@
 				07A5641F1BD0253000D6C27B /* ChannelDataPersistent.swift in Sources */,
 				E7364FC21B58F4450066632C /* Channel.swift in Sources */,
 				07ACB6DE1BD0EF9D003E76E4 /* ORSSerialRequest.m in Sources */,
+				078A57711BF33FBE00DA1E3C /* RemoteDisplay.swift in Sources */,
 				07D617171BDFC84A00B80668 /* BlenderGraphView.swift in Sources */,
 				077C57551BEA2EBB00FB6E21 /* UDPServerController.swift in Sources */,
 				077C57511BEA2E0B00FB6E21 /* ytcpsocket.swift in Sources */,

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15A279b" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <development version="6300" identifier="xcode"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9059"/>
@@ -462,6 +462,7 @@
                                                     </textField>
                                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jTp-k2-8qe">
                                                         <rect key="frame" x="18" y="4" width="441" height="19"/>
+                                                        <animations/>
                                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Label" id="RVF-8H-hjV">
                                                             <font key="font" size="16" name=".HelveticaNeueDeskInterface-Regular"/>
                                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -522,6 +523,7 @@
                                         </button>
                                         <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="43R-fz-9Jx">
                                             <rect key="frame" x="15" y="14" width="110" height="25"/>
+                                            <animations/>
                                             <buttonCell key="cell" type="roundTextured" title="LIVE mode" bezelStyle="texturedRounded" alignment="center" lineBreakMode="truncatingTail" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="wyX-of-EYl">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
                                                 <font key="font" metaFont="system"/>
@@ -582,7 +584,7 @@
                                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                                 <subviews>
                                                                                     <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SKu-jw-hkk">
-                                                                                        <rect key="frame" x="215" y="64" width="602" height="21"/>
+                                                                                        <rect key="frame" x="215" y="64" width="602" height="20"/>
                                                                                         <animations/>
                                                                                         <sliderCell key="cell" enabled="NO" state="on" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="below" sliderType="linear" id="ogv-Ew-p2G" customClass="TinySlider" customModule="MotionControl" customModuleProvider="target"/>
                                                                                     </slider>
@@ -614,7 +616,7 @@
                                                                                         </textFieldCell>
                                                                                     </textField>
                                                                                     <slider canDrawConcurrently="YES" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9jA-hq-ABv">
-                                                                                        <rect key="frame" x="215" y="48" width="602" height="21"/>
+                                                                                        <rect key="frame" x="215" y="48" width="602" height="20"/>
                                                                                         <animations/>
                                                                                         <sliderCell key="cell" continuous="YES" state="on" alignment="left" maxValue="100" doubleValue="75" tickMarkPosition="above" sliderType="linear" id="ep8-7W-hwW" customClass="BigSlider" customModule="MotionControl" customModuleProvider="target"/>
                                                                                         <connections>
@@ -723,7 +725,7 @@
                                                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                                             <subviews>
                                                                                                 <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ire-aY-p6y">
-                                                                                                    <rect key="frame" x="607" y="2" width="210" height="21"/>
+                                                                                                    <rect key="frame" x="607" y="2" width="210" height="20"/>
                                                                                                     <animations/>
                                                                                                     <sliderCell key="cell" continuous="YES" state="on" alignment="left" maxValue="1" doubleValue="1" tickMarkPosition="above" sliderType="linear" id="SDG-vl-Zec" customClass="MicroSlider" customModule="MotionControl" customModuleProvider="target"/>
                                                                                                     <connections>
@@ -767,7 +769,7 @@
                                                                                                     </textFieldCell>
                                                                                                 </textField>
                                                                                                 <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="trU-uK-yxf">
-                                                                                                    <rect key="frame" x="300" y="1" width="177" height="21"/>
+                                                                                                    <rect key="frame" x="300" y="1" width="177" height="20"/>
                                                                                                     <animations/>
                                                                                                     <sliderCell key="cell" continuous="YES" state="on" alignment="left" maxValue="5" doubleValue="5" tickMarkPosition="above" sliderType="linear" id="Xhh-m7-1ex" customClass="MicroSlider" customModule="MotionControl" customModuleProvider="target"/>
                                                                                                     <connections>
@@ -856,7 +858,7 @@
                                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                                 <subviews>
                                                                                     <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8cH-xC-1Mi">
-                                                                                        <rect key="frame" x="135" y="36" width="602" height="21"/>
+                                                                                        <rect key="frame" x="135" y="36" width="602" height="20"/>
                                                                                         <animations/>
                                                                                         <sliderCell key="cell" enabled="NO" state="on" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="below" sliderType="linear" id="K3n-Mw-48f" customClass="TinySlider" customModule="MotionControl" customModuleProvider="target"/>
                                                                                     </slider>
@@ -902,7 +904,7 @@
                                                                                         </textFieldCell>
                                                                                     </textField>
                                                                                     <slider canDrawConcurrently="YES" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9BL-Xh-EaS">
-                                                                                        <rect key="frame" x="135" y="20" width="602" height="21"/>
+                                                                                        <rect key="frame" x="135" y="20" width="602" height="20"/>
                                                                                         <animations/>
                                                                                         <sliderCell key="cell" continuous="YES" state="on" alignment="left" maxValue="100" doubleValue="75" tickMarkPosition="above" sliderType="linear" id="4Mi-SU-f7w" customClass="BigSlider" customModule="MotionControl" customModuleProvider="target"/>
                                                                                         <connections>
@@ -1021,14 +1023,14 @@
                                         <rect key="frame" x="0.0" y="538" width="1024" height="435"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <subviews>
-                                            <tabView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nEd-jS-gd6">
+                                            <tabView fixedFrame="YES" initialItem="vXv-hh-7s5" translatesAutoresizingMaskIntoConstraints="NO" id="nEd-jS-gd6">
                                                 <rect key="frame" x="-7" y="-52" width="1038" height="473"/>
                                                 <animations/>
                                                 <font key="font" metaFont="system"/>
                                                 <tabViewItems>
                                                     <tabViewItem label="Position memories" identifier="1" id="yKo-GL-pJF">
                                                         <view key="view" ambiguous="YES" id="t1L-uc-3Zj">
-                                                            <rect key="frame" x="10" y="33" width="137" height="72"/>
+                                                            <rect key="frame" x="10" y="33" width="133" height="72"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <scrollView ambiguous="YES" misplaced="YES" autohidesScrollers="YES" horizontalLineScroll="47" horizontalPageScroll="10" verticalLineScroll="47" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" findBarPosition="belowContent" translatesAutoresizingMaskIntoConstraints="NO" id="ltM-yH-Ywa">
@@ -1355,7 +1357,7 @@ Y: 0.000mm</string>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iUc-Aj-vXX">
-                                                                    <rect key="frame" x="24" y="369" width="971" height="27"/>
+                                                                    <rect key="frame" x="24" y="369" width="971" height="25"/>
                                                                     <animations/>
                                                                     <sliderCell key="cell" continuous="YES" state="on" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="below" numberOfTickMarks="2" sliderType="linear" id="bqB-Ik-c0p"/>
                                                                     <connections>
@@ -1364,6 +1366,7 @@ Y: 0.000mm</string>
                                                                 </slider>
                                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="31m-FQ-sb2">
                                                                     <rect key="frame" x="942" y="355" width="53" height="17"/>
+                                                                    <animations/>
                                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" id="Ak0-yu-fQY">
                                                                         <font key="font" metaFont="system"/>
                                                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -1372,6 +1375,7 @@ Y: 0.000mm</string>
                                                                 </textField>
                                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CEE-cp-s0N">
                                                                     <rect key="frame" x="471" y="355" width="77" height="17"/>
+                                                                    <animations/>
                                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="0" id="Mz2-MF-E87">
                                                                         <font key="font" metaFont="system"/>
                                                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -1380,6 +1384,7 @@ Y: 0.000mm</string>
                                                                 </textField>
                                                                 <customView misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZDM-IZ-vSm" customClass="BlenderPreviewGraph" customModule="MotionControl" customModuleProvider="target">
                                                                     <rect key="frame" x="31" y="32" width="956" height="315"/>
+                                                                    <animations/>
                                                                 </customView>
                                                                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s9I-Um-nKh">
                                                                     <rect key="frame" x="20" y="396" width="86" height="32"/>
@@ -1394,6 +1399,7 @@ Y: 0.000mm</string>
                                                                 </button>
                                                                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kv7-OP-oNs">
                                                                     <rect key="frame" x="101" y="396" width="88" height="32"/>
+                                                                    <animations/>
                                                                     <buttonCell key="cell" type="push" title="Refresh" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="yk1-Qo-AZS">
                                                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                                         <font key="font" metaFont="system"/>
@@ -1413,6 +1419,7 @@ Y: 0.000mm</string>
                                                                 </textField>
                                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s4M-5r-ZC6">
                                                                     <rect key="frame" x="24" y="355" width="49" height="17"/>
+                                                                    <animations/>
                                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" id="nlv-sg-zPB">
                                                                         <font key="font" metaFont="system"/>
                                                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -1446,6 +1453,7 @@ IA
                                                                 </button>
                                                                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EcK-2t-T4Z">
                                                                     <rect key="frame" x="928" y="401" width="59" height="25"/>
+                                                                    <animations/>
                                                                     <buttonCell key="cell" type="roundTextured" title="►" bezelStyle="texturedRounded" alignment="center" lineBreakMode="truncatingTail" enabled="NO" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="1fi-qL-0Ra">
                                                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                                         <font key="font" metaFont="system"/>

@@ -67,7 +67,7 @@ class SerialInterface: NSObject, HardwareInterface, ORSSerialPortDelegate {
         serialPort?.delegate = self
         serialPort?.open()
         openTimeout = true
-        let delaySeconds = (slow) ? 3.0 : 1.5
+        let delaySeconds = (slow) ? 4.0 : 1.5
         let popTime = dispatch_time(DISPATCH_TIME_NOW, Int64(delaySeconds * Double(NSEC_PER_SEC)))
         dispatch_after(popTime, dispatch_get_main_queue()) { () -> Void in
             self.checkForOpenTimeout()
@@ -128,7 +128,7 @@ class SerialInterface: NSObject, HardwareInterface, ORSSerialPortDelegate {
     
     
     func serialPort(serialPort: ORSSerialPort, didReceiveData data: NSData) {
-        print ("Received \(data.length) chars from serial port: \(data)")
+       // print ("Received \(data.length) chars from serial port: \(data)")
         
         var bytes = Array(count: 64, repeatedValue: UInt8(0))
         
@@ -154,8 +154,8 @@ class SerialInterface: NSObject, HardwareInterface, ORSSerialPortDelegate {
                 charsReceived -= 8
                 if charsReceived > 0 {
                     // move everything back
-                    for i in 0..<charsReceived {
-                        incomingBuffer[i] = incomingBuffer[8+i]
+                    for l in 0..<charsReceived {
+                        incomingBuffer[l] = incomingBuffer[8+l]
                     }
                 }
             }
@@ -217,7 +217,7 @@ class SerialInterface: NSObject, HardwareInterface, ORSSerialPortDelegate {
         helloTimeout = true
         outgoingBuffer[0] = 105
         if slow {
-            let popTime = dispatch_time(DISPATCH_TIME_NOW, Int64(1.5 * Double(NSEC_PER_SEC)))
+            let popTime = dispatch_time(DISPATCH_TIME_NOW, Int64(2.5 * Double(NSEC_PER_SEC)))
             dispatch_after(popTime, dispatch_get_main_queue()) { () -> Void in
                 self.sendQueryPacket()
             }

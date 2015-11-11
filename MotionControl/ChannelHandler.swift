@@ -362,9 +362,9 @@ class ChannelHandler {
                 var state = channel.channelDataLive.channelState
                 
                 let incomingState = bytes[2]
-                if incomingState == 2 {
+                if incomingState == 4 {
                     print("Channel (ID: \(channelID)) reported ran out of frames ###############################")
-                    state = .Idle
+                    //state = .Idle
                 }
                 
                 switch state {
@@ -467,10 +467,23 @@ class ChannelHandler {
         }
     }
     
+    var currentPlaybackFrame = 0
     
+    func latestFrameSent(frameNumber: Int) {
+        if frameNumber > currentPlaybackFrame {
+            currentPlaybackFrame = frameNumber
+            notifyCurrentFrameChanged()
+        }
+    }
     
+    func notifyCurrentFrameChanged() {
+        executiveController.currentPlaybackFrameChanged(currentPlaybackFrame)
+        commsHandler.updateRemoteDisplayFrame(currentPlaybackFrame)
+    }
     
-    
+    func notifyExecutiveStateChanged(status: ExecutiveState) {
+        commsHandler.updateRemoteDisplayStatus(status)
+    }
     
     
     
@@ -478,6 +491,8 @@ class ChannelHandler {
     
     
     func startPlayback() {
+        currentPlaybackFrame = 0
+        notifyCurrentFrameChanged()
         for (_, chan) in channels {
             chan.trajectoryHandler.startPlayback()
         }

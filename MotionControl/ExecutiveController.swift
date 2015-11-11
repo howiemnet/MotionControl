@@ -16,22 +16,75 @@
 
 import Cocoa
 
+
+// ---- EXECUTIVE STATE ---- //
+enum ExecutiveState: String {
+    case Offline = "Offline"
+    case Idle = "Idle"
+    case ScanningForDevices = "Scanning for devices"
+    case ManualMovingToTarget = "Manual: Channels moving"
+    case Stopping = "Stopping"
+    case AnimationMovingToStart = "Moving to first animation position"
+    case AnimationPausingBeforePlayback = "Pausing before playback"
+    case AnimationPlaying = "Playing animation"
+    case HomingChannels = "Homing channels"
+}
+
+
+
+
+func ExecutiveStateString(state: ExecutiveState) -> String {
+    switch (state) {
+    case .Offline:
+        return "Offline"
+    case .Idle:
+        return "Idle"
+    case .ScanningForDevices:
+        return "Scanning for devices"
+    case .ManualMovingToTarget:
+        return "Manual: Channels moving"
+    case .Stopping:
+        return "Stopping"
+    case .AnimationMovingToStart:
+        return "Moving to first animation position"
+    case .AnimationPausingBeforePlayback:
+        return "Pausing before playback"
+    case .AnimationPlaying:
+        return "Playing animation"
+    case .HomingChannels:
+        return "Homing channels"
+    }
+}
+
+
+func ExecutiveStateStringShort(state: ExecutiveState) -> String {
+    switch (state) {
+    case .Offline:
+        return "Offline"
+    case .Idle:
+        return "Idle"
+    case .ScanningForDevices:
+        return "Scanning"
+    case .ManualMovingToTarget:
+        return "Manual"
+    case .Stopping:
+        return "Stopping"
+    case .AnimationMovingToStart:
+        return "Resetting"
+    case .AnimationPausingBeforePlayback:
+        return "Pausing"
+    case .AnimationPlaying:
+        return "Playing"
+    case .HomingChannels:
+        return "Homing"
+    }
+}
+
+
+
 class ExecutiveController: NSObject {
    
-    // ---- EXECUTIVE STATE ---- //
-    enum ExecutiveState: String {
-        case Offline = "Offline"
-        case Idle = "Idle"
-        case ScanningForDevices = "Scanning for devices"
-        case ManualMovingToTarget = "Manual: Channels moving"
-        case Stopping = "Stopping"
-        case AnimationMovingToStart = "Moving to first animation position"
-        case AnimationPausingBeforePlayback = "Pausing before playback"
-        case AnimationPlaying = "Playing animation"
-        case HomingChannels = "Homing channels"
-    }
-
-      
+    
       var simulationMode = false
       
       @IBOutlet weak var simulatorButton: NSButton!
@@ -53,7 +106,7 @@ class ExecutiveController: NSObject {
     @IBOutlet weak var blenderPlaybackController: BlenderPlaybackController!
       
     // ---- OBJECTS ---- //
-    weak var viewController : ViewUpdateDelegate?
+    var viewController : ViewUpdateDelegate!
     var channelHandler : ChannelHandler!
     var udpServerController : UDPServerController!
     
@@ -147,6 +200,7 @@ class ExecutiveController: NSObject {
             print ("State update: \(newState)")
             executiveState = newState
             viewController?.updateStatus(newState.rawValue)
+            channelHandler.notifyExecutiveStateChanged(newState)
         }
     }
     
@@ -175,8 +229,8 @@ class ExecutiveController: NSObject {
 
     
     
-    func channelOnlineChange(theChan: Channel) {
-/*
+/*    func channelOnlineChange(theChan: Channel) {
+
         print ("channelOnlineChange: \(theChan.channelName) is now \(theChan.online)")
         if (theChan.online) {
             // let's go online
@@ -187,15 +241,15 @@ class ExecutiveController: NSObject {
           //  theChan.hardwareInterface?.goOffline()
             theChan.velocityCurrent = 0
             //theChan.hardwareInterface = nil
-        }*/
+        }
     }
-    
+
     func homeAllChannels() {
   //      for channel in channelData {
   //          channel.startHoming()
   //      }
     }
-    
+    */
     
     func homeOneChannel(channelID: Int) {
         channelHandler.homeOneChannel(channelID)
@@ -314,19 +368,14 @@ class ExecutiveController: NSObject {
     }
     
     
-    // -----------------------------------------------------
+    // ----------------------------------------------------------------------------------------------------------
     //
-    //   Blender playback control
+    //   BLENDER CONTROL
     //
     //
-    // -----------------------------------------------------
+    // ----------------------------------------------------------------------------------------------------------
 
     func requestStartPlayback() {
-        // wait until channels are all stopped
-        // (stop them?)
-        // move to first position
-        // delay for a sec
-        // start playback
         if executiveState == .Idle {
             updateStatus(ExecutiveState.AnimationMovingToStart)
             setCurrentChannelPositions(blenderPlaybackController.getPositionsForFirstFrame())
@@ -358,7 +407,9 @@ class ExecutiveController: NSObject {
         
     }
 
-
+    func currentPlaybackFrameChanged(theFrame: Int) {
+        blenderPlaybackController.updateCurrentPlaybackFrame(theFrame)
+    }
 
 }
 

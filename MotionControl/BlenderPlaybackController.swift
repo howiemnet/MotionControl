@@ -1,6 +1,6 @@
 //
 //  BlenderPlaybackController.swift
-//  
+//
 //
 //  Created by h on 16/10/2015.
 //
@@ -9,7 +9,7 @@
 import Cocoa
 
 class BlenderPlaybackController: NSObject {
-
+    
     var fileLoaded = false
     var framesLoaded = 0
     var firstFrame = 0
@@ -32,13 +32,12 @@ class BlenderPlaybackController: NSObject {
     
     @IBOutlet weak var refreshButton: NSButton!
     
-    //@IBOutlet weak var graphViewController: BlenderPreviewGraph!
     @IBOutlet weak var graphView: BlenderPreviewGraph!
-
+    
     
     @IBAction func buttonPressed(sender: NSButton) {
-            let panel = NSOpenPanel()
-            panel.canChooseDirectories = true
+        let panel = NSOpenPanel()
+        panel.canChooseDirectories = true
         panel.allowsMultipleSelection = false
         panel.message = "Open a Blender playback file"
         panel.beginSheetModalForWindow(theView.window!) { (result: Int) -> Void in
@@ -47,11 +46,11 @@ class BlenderPlaybackController: NSObject {
                 self.fileURL = panel.URL!
                 let defaults = NSUserDefaults.standardUserDefaults()
                 defaults.setURL(self.fileURL, forKey:"lastBlenderFile")
-                   
+                
                 self.refreshBlenderFile()
             }
         }
-
+        
     }
     
     @IBAction func playbackPositionSlider(sender: NSSlider) {
@@ -110,7 +109,7 @@ class BlenderPlaybackController: NSObject {
             playbackPositionSlider.maxValue = Double(lastFrame)
             playbackPositionSlider.integerValue = firstFrame
             playbackPositionSlider.enabled = true
-
+            
             
             // --------------------------------------
             //
@@ -132,14 +131,14 @@ class BlenderPlaybackController: NSObject {
             }
             
             print ("\(channelIDs.count) channel(s) matched up")
-
+            
             // --------------------------------------
             //
             //  Process the motion data...
             //
             // --------------------------------------
             
-      
+            
             var graphingData = Array(count: csvData!.headers.count, repeatedValue: ChannelGraphData())
             
             
@@ -147,10 +146,10 @@ class BlenderPlaybackController: NSObject {
                 //var thePositions = [Int:Double]()
                 for (columnNumber, data) in csvRow.enumerate() {
                     if (channelIDs[columnNumber] != nil) {
-                       motionData[channelIDs[columnNumber]!]!.append(Double(data)!)
+                        motionData[channelIDs[columnNumber]!]!.append(Double(data)!)
                     }
                     graphingData[columnNumber].data.append(Double(data)!);
-
+                    
                 }
                 //motionData.append(thePositions)
             }
@@ -196,7 +195,7 @@ class BlenderPlaybackController: NSObject {
     }
     
     func getDataStreamForChannel(channelID: Int) -> [Double] {
-       return motionData[channelID]!
+        return motionData[channelID]!
     }
     
     func getPositionsForFirstFrame() -> [Int:Double] {
@@ -210,8 +209,14 @@ class BlenderPlaybackController: NSObject {
         if let previousURL = defaults.URLForKey("lastBlenderFile") {
             fileURL = previousURL
         }
-        //sequencerTable!.sequen
-        //playbackPositionSlider.enabled = false
+        
     }
+    
+    
+    func updateCurrentPlaybackFrame(theFrame: Int) {
+        playbackPositionSlider.integerValue = theFrame
+        currentFrameField.integerValue = theFrame
+    }
+    
     
 }

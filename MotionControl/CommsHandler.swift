@@ -41,6 +41,7 @@ class CommsHandler: NSObject, NSUserNotificationCenterDelegate {
       let serialPortManager = ORSSerialPortManager.sharedSerialPortManager()
       var numberOfChannelsAwaitingResponse = 0
       var simulationMode = false
+    var remoteDisplay = RemoteDisplay()
     
     var outgoingBuffer = Array(count: 64, repeatedValue: UInt8(0))
       
@@ -196,6 +197,9 @@ class CommsHandler: NSObject, NSUserNotificationCenterDelegate {
             if numberOfChannelsAwaitingResponse == 0 {
                   channelHandler.notifyScanningFinished()
             }
+        if remoteDisplay.displayConnected == false {
+            remoteDisplay.initialiseDisplay("/dev/cu.usbserial-A50285BI")
+        }
       }
       
       
@@ -260,7 +264,16 @@ class CommsHandler: NSObject, NSUserNotificationCenterDelegate {
             }
             
       }
-      
+    
+    func updateRemoteDisplayStatus(status: ExecutiveState) {
+      remoteDisplay.updateDisplayStatus(ExecutiveStateStringShort(status))
+    }
+    
+    func updateRemoteDisplayFrame(frame: Int) {
+        remoteDisplay.updateDisplayTime(frame)
+        
+    }
+    
       func notifyInterfaceDidntRespondToHello(interfaceIndex: Int) {
             interfaceList[interfaceIndex].online = false
             interfaceList[interfaceIndex].hardwareInterface = nil
@@ -331,7 +344,7 @@ class CommsHandler: NSObject, NSUserNotificationCenterDelegate {
         outgoingBuffer[0] = OutgoingMessageTypes.NextFramePosition.rawValue
         outgoingBuffer = insertInt32IntoBuffer(liveData.positionActualSteps, theBuffer: outgoingBuffer, offset: 1)
         sendMessageToChannel(channelID, bytes: outgoingBuffer)
-        print("Send frame data: position \(liveData.positionActualSteps), \(outgoingBuffer)")
+        print("Send frame data: channel \(channelID) to position \(liveData.positionActualSteps)") //, \(outgoingBuffer)")
         
     
     }

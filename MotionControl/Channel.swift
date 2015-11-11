@@ -33,7 +33,7 @@ class Channel {
         channelDataPersistent = persist
         channelDataSettings = settings
         channelDataLive = live
-      trajectoryHandler = TrajectoryHandler(chan: self)
+        trajectoryHandler = TrajectoryHandler(chan: self, handler: channelHandler)
     }
     
 }

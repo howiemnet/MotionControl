@@ -40,25 +40,14 @@ class ChannelCellView: NSTableCellView {
     @IBOutlet weak var speedSliderReadout: NSTextField!
     @IBOutlet weak var accelSliderReadout: NSTextField!
     
-    //@IBOutlet weak var channelDesiredPositionSliderCell: NSSliderCell!
     
     @IBOutlet weak var motorEnabledSwitch: NSButton!
    
     @IBAction func nudgePositive(sender: NSButton) {
-    
-//            if let targetData = objectValue as? Channel {
-//                targetData.positionDesired += targetData.positionNudgeSmall
-//                
-//        }
     }
    
     
     @IBAction func nudgeNegative(sender: NSButton) {
-        
-//        if let targetData = objectValue as? Channel {
-//            targetData.positionDesired -= targetData.positionNudgeSmall
-//            
-//        }
     }
     
     var oldPositionActual = 999990.0
@@ -69,8 +58,66 @@ class ChannelCellView: NSTableCellView {
     let mytrkIndicatorONImage = NSImage(named: "trkIndicatorOnGreen")
     let mytrkIndicatorOFFImage = NSImage(named: "trkIndicatorOFFGreen")
     
+    
+    
+    
+    // ------------------------------------------------------------------------------------------------------------------
+    //
+    //    Initial set up
+    //
+    // ------------------------------------------------------------------------------------------------------------------
+
+    
+    override var objectValue:AnyObject? {
+        didSet {
+            updatePersistentValues()
+            updateLiveValues()
+        }
+    }
+    
+    
+    
+
+    func updatePersistentValues() {
+        if let theChannel = objectValue as? ChannelUI {
+           
+            // -------------------------------------
+            // 
+            //    Set up the cell
+            //
+            // -------------------------------------
+            
+            channelNameField.stringValue = theChannel.channelDataPersistent.channelName
+            
+            channelActualPositionSlider.maxValue = theChannel.channelDataPersistent.positionMaximum
+            channelActualPositionSlider.minValue = theChannel.channelDataPersistent.positionMinimum
+            channelDesiredPositionSlider.maxValue = theChannel.channelDataPersistent.positionMaximum
+            channelDesiredPositionSlider.minValue = theChannel.channelDataPersistent.positionMinimum
+            
+            channelUnitsActualText.stringValue = theChannel.channelDataPersistent.displayUnits
+            channelUnitsDesiredText.stringValue = theChannel.channelDataPersistent.displayUnits
+            
+            homedIndicator.state = (theChannel.channelDataLive.homeSensorClosed) ? NSOnState : NSOffState
+            
+            speedSlider.maxValue = theChannel.channelDataPersistent.maximumSpeed
+            accelSlider.maxValue = theChannel.channelDataPersistent.maximumAcceleration
+            
+            speedSlider.doubleValue = theChannel.channelDataSettings.maximumSpeed
+            accelSlider.doubleValue = theChannel.channelDataSettings.maximumAcceleration
+            
+            speedSliderReadout.stringValue = NSString(format: "%.2f", theChannel.channelDataSettings.maximumSpeed) as String
+            accelSliderReadout.stringValue = NSString(format: "%.2f", theChannel.channelDataSettings.maximumAcceleration) as String
+        }
+    }
+    
     func updateLiveValues() {
         if let value = objectValue as? ChannelUI {
+            
+            // -------------------------------------
+            //
+            //    Update state
+            //
+            // -------------------------------------
             
             if value.channelDataLive.channelState != oldChannelState {
                 oldChannelState = value.channelDataLive.channelState
@@ -88,7 +135,14 @@ class ChannelCellView: NSTableCellView {
                 motorEnabledSwitch.setNeedsDisplay()
                 channelDesiredPositionSlider.setNeedsDisplay()
             }
+            
+            // -------------------------------------
+            //
+            //    Update ACTUAL position
+            //
+            // -------------------------------------
 
+            
             if value.channelDataLive.positionActual != oldPositionActual {
                 channelActualPositionSlider.doubleValue = value.channelDataLive.positionActual
                 channelActualPositionSlider.setNeedsDisplay()
@@ -96,76 +150,67 @@ class ChannelCellView: NSTableCellView {
                 channelActualPositionReadout.setNeedsDisplay()
                 oldPositionActual = value.channelDataLive.positionActual
             }
+
+            // -------------------------------------
+            //x
+            //    Update DESIRED position
+            //
+            // -------------------------------------
+
             
-        if value.channelDataLive.positionDesired != oldPositionDesired {
-            channelDesiredPositionSlider.doubleValue = value.channelDataLive.positionDesired
-            channelDesiredPositionSlider.setNeedsDisplay()
-            channelDesiredPositionReadout.integerValue = Int(value.channelDataLive.positionDesired)
-            oldPositionDesired = value.channelDataLive.positionDesired
-        }
-        
+            if value.channelDataLive.positionDesired != oldPositionDesired {
+                channelDesiredPositionSlider.doubleValue = value.channelDataLive.positionDesired
+                channelDesiredPositionSlider.setNeedsDisplay()
+                channelDesiredPositionReadout.integerValue = Int(value.channelDataLive.positionDesired)
+                oldPositionDesired = value.channelDataLive.positionDesired
+            }
+            
+            // -------------------------------------
+            //
+            //    Update VELOCITY display
+            //
+            // -------------------------------------
+
             if value.channelDataLive.velocityCurrent != oldVelocity {
-//                
-                     speedGraph.doubleValue = 100.0 * (abs(value.channelDataLive.velocityCurrent) / (value.channelDataPersistent.maximumSpeed))
-//                //speedGraph.setNeedsDisplay()
-//            
+                speedGraph.doubleValue = 100.0 * (abs(value.channelDataLive.velocityCurrent) / (value.channelDataPersistent.maximumSpeed))
                 trkIndicatorLeft.image = (value.channelDataLive.velocityCurrent >= 0.0 ) ? mytrkIndicatorOFFImage : mytrkIndicatorONImage
-//                trkIndicatorLeft.setNeedsDisplay()
                 trkIndicatorRight.image = (value.channelDataLive.velocityCurrent <= 0.0 ) ? mytrkIndicatorOFFImage : mytrkIndicatorONImage
-//                trkIndicatorRight.setNeedsDisplay()
-//            
                 oldVelocity = value.channelDataLive.velocityCurrent
             }
+
+            // -------------------------------------
+            //
+            //    Update HOME sensor display
+            //
+            // -------------------------------------
+
+            
             let sensorState = (value.channelDataLive.homeSensorClosed) ? NSOnState : NSOffState
             if (homedIndicator.state != sensorState) {
                 Swift.print ("HomeChanged")
                 homedIndicator.state = sensorState
                 homedIndicator.setNeedsDisplay()
             }
-//
-        }
-    }
-    
-    override var objectValue:AnyObject? {
-        didSet {
-            if let theChannel = objectValue as? ChannelUI {
-                // assign value.property to UI elements 
-                channelNameField.stringValue = theChannel.channelDataPersistent.channelName
-                
-                channelActualPositionSlider.maxValue = theChannel.channelDataPersistent.positionMaximum
-                channelActualPositionSlider.minValue = theChannel.channelDataPersistent.positionMinimum
-                channelDesiredPositionSlider.maxValue = theChannel.channelDataPersistent.positionMaximum
-                channelDesiredPositionSlider.minValue = theChannel.channelDataPersistent.positionMinimum
-                
-//                channelActualPositionSlider.doubleValue = theChannel.channelDataLive.positionActual
-//                channelDesiredPositionSlider.doubleValue = theChannel.channelDataLive.positionDesired
-                
-                channelUnitsActualText.stringValue = theChannel.channelDataPersistent.displayUnits
-                channelUnitsDesiredText.stringValue = theChannel.channelDataPersistent.displayUnits
-                
-//                channelActualPositionReadout.stringValue = NSString(format: "%.2f", theChannel.channelDataLive.positionActual) as String
-//                channelDesiredPositionReadout.stringValue = NSString(format: "%.2f", theChannel.channelDataLive.positionDesired) as String
-                
-//                motorEnabledSwitch.state = (theChannel.channelDataLive.channelState != .HandControl) ? NSOffState : NSOnState
-                
-                homedIndicator.state = (theChannel.channelDataLive.homeSensorClosed) ? NSOnState : NSOffState
-                //homedIndicator.
-                
-                   // setup stuff
-                
-                speedSlider.maxValue = theChannel.channelDataPersistent.maximumSpeed
-                accelSlider.maxValue = theChannel.channelDataPersistent.maximumAcceleration
-                
-                speedSlider.doubleValue = theChannel.channelDataSettings.maximumSpeed
-                accelSlider.doubleValue = theChannel.channelDataSettings.maximumAcceleration
-                
-                speedSliderReadout.stringValue = NSString(format: "%.2f", theChannel.channelDataSettings.maximumSpeed) as String
-                accelSliderReadout.stringValue = NSString(format: "%.2f", theChannel.channelDataSettings.maximumAcceleration) as String
-                updateLiveValues()
-            }
+            
+            
         }
     }
 
+    
+    
+    // ------------------------------------------------------------------------------------------------------------------
+    //
+    //    Handle 
+    //
+    // ------------------------------------------------------------------------------------------------------------------
+   
+    
+    
+    
+    
+    
+    
+    
     
     
     @IBAction func quickJumpButton(sender: NSButton) {

@@ -28,5 +28,6 @@ struct ChannelDataSettings {
     var maximumAcceleration = 0.0
     
     var simulationMode = false
+    var channelMute = false
 
 }
