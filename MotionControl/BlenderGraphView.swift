@@ -40,7 +40,8 @@ class BlenderPreviewGraph : NSView {
         }
     }
     
-    
+    var xOffset = CGFloat(0)
+    var xFrames = 0
     var xScale = CGFloat(0)
     var yScales = [CGFloat]()
     var yOffsets = [CGFloat]()
@@ -51,6 +52,8 @@ class BlenderPreviewGraph : NSView {
     
     
     func updateGraph() {
+        xFrames = graphData[0].data.count
+        xOffset = CGFloat(graphData[0].data[0])
         xScale = self.bounds.width / CGFloat(graphData[0].data.count - 1)
         yScales = []
         yOffsets = []
@@ -91,6 +94,9 @@ class BlenderPreviewGraph : NSView {
         //  Grid lines
         //
         // ---------------------------------
+        
+        let numOfLines = (xFrames - 1) / 25
+        
         
         /*let firstXGridline = (Int(dataLeft / gridLinesXSpacing) + 1)
         let lastXGridline = (Int(dataRight / gridLinesXSpacing))

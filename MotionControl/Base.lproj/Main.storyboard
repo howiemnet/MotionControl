@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15A279b" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F27" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <development version="6300" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9059"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9060"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -584,7 +584,7 @@
                                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                                 <subviews>
                                                                                     <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SKu-jw-hkk">
-                                                                                        <rect key="frame" x="215" y="64" width="602" height="20"/>
+                                                                                        <rect key="frame" x="215" y="64" width="602" height="21"/>
                                                                                         <animations/>
                                                                                         <sliderCell key="cell" enabled="NO" state="on" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="below" sliderType="linear" id="ogv-Ew-p2G" customClass="TinySlider" customModule="MotionControl" customModuleProvider="target"/>
                                                                                     </slider>
@@ -616,7 +616,7 @@
                                                                                         </textFieldCell>
                                                                                     </textField>
                                                                                     <slider canDrawConcurrently="YES" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9jA-hq-ABv">
-                                                                                        <rect key="frame" x="215" y="48" width="602" height="20"/>
+                                                                                        <rect key="frame" x="215" y="48" width="602" height="21"/>
                                                                                         <animations/>
                                                                                         <sliderCell key="cell" continuous="YES" state="on" alignment="left" maxValue="100" doubleValue="75" tickMarkPosition="above" sliderType="linear" id="ep8-7W-hwW" customClass="BigSlider" customModule="MotionControl" customModuleProvider="target"/>
                                                                                         <connections>
@@ -725,7 +725,7 @@
                                                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                                             <subviews>
                                                                                                 <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ire-aY-p6y">
-                                                                                                    <rect key="frame" x="607" y="2" width="210" height="20"/>
+                                                                                                    <rect key="frame" x="607" y="2" width="210" height="21"/>
                                                                                                     <animations/>
                                                                                                     <sliderCell key="cell" continuous="YES" state="on" alignment="left" maxValue="1" doubleValue="1" tickMarkPosition="above" sliderType="linear" id="SDG-vl-Zec" customClass="MicroSlider" customModule="MotionControl" customModuleProvider="target"/>
                                                                                                     <connections>
@@ -769,7 +769,7 @@
                                                                                                     </textFieldCell>
                                                                                                 </textField>
                                                                                                 <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="trU-uK-yxf">
-                                                                                                    <rect key="frame" x="300" y="1" width="177" height="20"/>
+                                                                                                    <rect key="frame" x="300" y="1" width="177" height="21"/>
                                                                                                     <animations/>
                                                                                                     <sliderCell key="cell" continuous="YES" state="on" alignment="left" maxValue="5" doubleValue="5" tickMarkPosition="above" sliderType="linear" id="Xhh-m7-1ex" customClass="MicroSlider" customModule="MotionControl" customModuleProvider="target"/>
                                                                                                     <connections>
@@ -799,7 +799,7 @@
                                                                                         <color key="fillColor" white="0.14482758620689656" alpha="1" colorSpace="calibratedWhite"/>
                                                                                     </box>
                                                                                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wPM-Ad-jx3">
-                                                                                        <rect key="frame" x="52" y="34" width="87" height="19"/>
+                                                                                        <rect key="frame" x="15" y="34" width="87" height="19"/>
                                                                                         <animations/>
                                                                                         <buttonCell key="cell" type="recessed" title="MANUAL" bezelStyle="recessed" alignment="center" lineBreakMode="truncatingTail" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="pmf-MD-lrT">
                                                                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
@@ -807,6 +807,17 @@
                                                                                         </buttonCell>
                                                                                         <connections>
                                                                                             <action selector="motorEnabledSwitch:" target="t9z-p0-NAs" id="MIU-bA-RlA"/>
+                                                                                        </connections>
+                                                                                    </button>
+                                                                                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JhS-w5-SDW">
+                                                                                        <rect key="frame" x="134" y="34" width="31" height="19"/>
+                                                                                        <animations/>
+                                                                                        <buttonCell key="cell" type="recessed" title="M" bezelStyle="recessed" alignment="center" lineBreakMode="truncatingTail" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ujo-tu-1mV">
+                                                                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                                                                            <font key="font" metaFont="systemBold" size="12"/>
+                                                                                        </buttonCell>
+                                                                                        <connections>
+                                                                                            <action selector="motorEnabledSwitch:" target="t9z-p0-NAs" id="v7t-Bb-htq"/>
                                                                                         </connections>
                                                                                     </button>
                                                                                 </subviews>
@@ -858,7 +869,7 @@
                                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                                 <subviews>
                                                                                     <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8cH-xC-1Mi">
-                                                                                        <rect key="frame" x="135" y="36" width="602" height="20"/>
+                                                                                        <rect key="frame" x="135" y="36" width="602" height="21"/>
                                                                                         <animations/>
                                                                                         <sliderCell key="cell" enabled="NO" state="on" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="below" sliderType="linear" id="K3n-Mw-48f" customClass="TinySlider" customModule="MotionControl" customModuleProvider="target"/>
                                                                                     </slider>
@@ -904,7 +915,7 @@
                                                                                         </textFieldCell>
                                                                                     </textField>
                                                                                     <slider canDrawConcurrently="YES" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9BL-Xh-EaS">
-                                                                                        <rect key="frame" x="135" y="20" width="602" height="20"/>
+                                                                                        <rect key="frame" x="135" y="20" width="602" height="21"/>
                                                                                         <animations/>
                                                                                         <sliderCell key="cell" continuous="YES" state="on" alignment="left" maxValue="100" doubleValue="75" tickMarkPosition="above" sliderType="linear" id="4Mi-SU-f7w" customClass="BigSlider" customModule="MotionControl" customModuleProvider="target"/>
                                                                                         <connections>
@@ -1029,13 +1040,13 @@
                                                 <font key="font" metaFont="system"/>
                                                 <tabViewItems>
                                                     <tabViewItem label="Position memories" identifier="1" id="yKo-GL-pJF">
-                                                        <view key="view" ambiguous="YES" id="t1L-uc-3Zj">
-                                                            <rect key="frame" x="10" y="33" width="133" height="72"/>
+                                                        <view key="view" id="t1L-uc-3Zj">
+                                                            <rect key="frame" x="10" y="33" width="137" height="72"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
-                                                                <scrollView ambiguous="YES" misplaced="YES" autohidesScrollers="YES" horizontalLineScroll="47" horizontalPageScroll="10" verticalLineScroll="47" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" findBarPosition="belowContent" translatesAutoresizingMaskIntoConstraints="NO" id="ltM-yH-Ywa">
+                                                                <scrollView misplaced="YES" autohidesScrollers="YES" horizontalLineScroll="47" horizontalPageScroll="10" verticalLineScroll="47" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" findBarPosition="belowContent" translatesAutoresizingMaskIntoConstraints="NO" id="ltM-yH-Ywa">
                                                                     <rect key="frame" x="17" y="17" width="984" height="357"/>
-                                                                    <clipView key="contentView" ambiguous="YES" drawsBackground="NO" copiesOnScroll="NO" id="gWT-LW-lsW">
+                                                                    <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="gWT-LW-lsW">
                                                                         <rect key="frame" x="1" y="1" width="982" height="355"/>
                                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                         <subviews>
@@ -1352,12 +1363,12 @@ Y: 0.000mm</string>
                                                         </view>
                                                     </tabViewItem>
                                                     <tabViewItem label="Blender playback" identifier="2" id="vXv-hh-7s5">
-                                                        <view key="view" id="Xa2-pE-97c">
+                                                        <view key="view" ambiguous="YES" id="Xa2-pE-97c">
                                                             <rect key="frame" x="10" y="33" width="1018" height="427"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iUc-Aj-vXX">
-                                                                    <rect key="frame" x="24" y="369" width="971" height="25"/>
+                                                                    <rect key="frame" x="24" y="369" width="971" height="27"/>
                                                                     <animations/>
                                                                     <sliderCell key="cell" continuous="YES" state="on" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="below" numberOfTickMarks="2" sliderType="linear" id="bqB-Ik-c0p"/>
                                                                     <connections>
@@ -1382,7 +1393,7 @@ Y: 0.000mm</string>
                                                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                     </textFieldCell>
                                                                 </textField>
-                                                                <customView misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZDM-IZ-vSm" customClass="BlenderPreviewGraph" customModule="MotionControl" customModuleProvider="target">
+                                                                <customView ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZDM-IZ-vSm" customClass="BlenderPreviewGraph" customModule="MotionControl" customModuleProvider="target">
                                                                     <rect key="frame" x="31" y="32" width="956" height="315"/>
                                                                     <animations/>
                                                                 </customView>
@@ -1427,9 +1438,9 @@ Y: 0.000mm</string>
                                                                     </textFieldCell>
                                                                 </textField>
                                                                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Afz-Im-nPk">
-                                                                    <rect key="frame" x="794" y="401" width="59" height="25"/>
+                                                                    <rect key="frame" x="690" y="401" width="59" height="25"/>
                                                                     <animations/>
-                                                                    <buttonCell key="cell" type="roundTextured" title="◃" bezelStyle="texturedRounded" alignment="center" lineBreakMode="truncatingTail" enabled="NO" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="lht-cr-Tdt">
+                                                                    <buttonCell key="cell" type="roundTextured" title="◃◃" bezelStyle="texturedRounded" alignment="center" lineBreakMode="truncatingTail" enabled="NO" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="lht-cr-Tdt">
                                                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                                         <font key="font" metaFont="system"/>
                                                                     </buttonCell>
@@ -1438,7 +1449,7 @@ Y: 0.000mm</string>
                                                                     </connections>
                                                                 </button>
                                                                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uDw-Cl-pu9">
-                                                                    <rect key="frame" x="861" y="401" width="59" height="25"/>
+                                                                    <rect key="frame" x="811" y="401" width="59" height="25"/>
                                                                     <animations/>
                                                                     <buttonCell key="cell" type="roundTextured" title="◼︎" bezelStyle="texturedRounded" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" borderStyle="border" inset="2" id="Gvi-0U-VyY">
                                                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -1460,6 +1471,32 @@ IA
                                                                     </buttonCell>
                                                                     <connections>
                                                                         <action selector="playButton:" target="flJ-Uw-Vzt" id="64Y-Nd-glO"/>
+                                                                    </connections>
+                                                                </button>
+                                                                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GBX-MC-EbH">
+                                                                    <rect key="frame" x="762" y="401" width="41" height="25"/>
+                                                                    <buttonCell key="cell" type="roundTextured" title="|&lt;" bezelStyle="texturedRounded" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" borderStyle="border" inset="2" id="mUj-n3-fzt">
+                                                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                                        <font key="font" metaFont="system"/>
+                                                                        <string key="keyEquivalent" base64-UTF8="YES">
+IA
+</string>
+                                                                    </buttonCell>
+                                                                    <connections>
+                                                                        <action selector="frameBack:" target="flJ-Uw-Vzt" id="lLj-uj-QWy"/>
+                                                                    </connections>
+                                                                </button>
+                                                                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fyQ-3v-ZQy">
+                                                                    <rect key="frame" x="878" y="400" width="41" height="25"/>
+                                                                    <buttonCell key="cell" type="roundTextured" title="&gt;|" bezelStyle="texturedRounded" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" borderStyle="border" inset="2" id="Yyw-zo-wA8">
+                                                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                                        <font key="font" metaFont="system"/>
+                                                                        <string key="keyEquivalent" base64-UTF8="YES">
+IA
+</string>
+                                                                    </buttonCell>
+                                                                    <connections>
+                                                                        <action selector="frameFwd:" target="flJ-Uw-Vzt" id="A72-6f-zxE"/>
                                                                     </connections>
                                                                 </button>
                                                             </subviews>

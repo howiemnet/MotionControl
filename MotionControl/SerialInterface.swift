@@ -119,6 +119,8 @@ class SerialInterface: NSObject, HardwareInterface, ORSSerialPortDelegate {
     //
     //   Has to handle situations where partial buffers arrive
     //
+    //   This whole thing is clunky and horrible
+    //
     // -------------------------------------------------------------------
 
 

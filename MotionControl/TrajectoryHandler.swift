@@ -39,6 +39,8 @@ class TrajectoryHandler {
     
     var channelHandler: ChannelHandler!
     
+    var lensHandler: LensHandler? = nil
+    
     var liveData : ChannelDataLive
     var positionDesired = Double(0.0)
     var oldTargetPosition = 0.0
@@ -67,6 +69,13 @@ class TrajectoryHandler {
         channel = chan
         liveData = channel.channelDataLive
         channelHandler = handler
+        
+        // init the lens handler if necessary
+        
+        if channel.channelDataPersistent.actuatorType == .LensAF {
+            lensHandler = LensHandler(lensID: Int(channel.channelDataPersistent.scale))
+        }
+        
     }
     
     
@@ -176,7 +185,7 @@ class TrajectoryHandler {
     
     func scaleForActuator() {
         if (channel.channelDataPersistent.actuatorType == .LensAF) {
-            liveData.positionActualSteps = Int32(LensHandler().getLensStepsFromDistance(liveData.positionActual))
+            liveData.positionActualSteps = Int32(lensHandler!.getLensStepsFromDistance(liveData.positionActual))
 
         } else {
             liveData.positionActualSteps = Int32(channel.channelDataPersistent.scale * liveData.positionActual)
@@ -366,7 +375,7 @@ class TrajectoryHandler {
                         //    Overshoot - so decellerate now
                         // ---------------------------------------------
                         
-                        if (targetDirection) {
+                        if (currentDirection) {
                             
                             liveData.velocityCurrent -= channel.channelDataSettings.maximumAcceleration
                             
@@ -380,7 +389,7 @@ class TrajectoryHandler {
                             
                         } else {
                             
-                            liveData.velocityCurrent -= channel.channelDataSettings.maximumAcceleration
+                            liveData.velocityCurrent += channel.channelDataSettings.maximumAcceleration
                             
                             // ---------------------------------------------
                             //    Check we won't overshoot the other way
@@ -435,6 +444,12 @@ class TrajectoryHandler {
                             } else {
                                 
                                 let theDecel = currentSpeed / theDecelFrames
+                                
+                                
+                                print ("------decel: \(theDecel), distance to target is \(distanceToTarget), velocity is \(liveData.velocityCurrent), expected frames = \(theDecelFrames)")
+                                
+                                
+                                
                                 if (targetDirection) {
                                     liveData.velocityCurrent -= theDecel
                                 } else {
@@ -447,8 +462,7 @@ class TrajectoryHandler {
                                 finalDecelRate = theDecel
                                 finalDecelFrames = theDecelFrames - 1.0
                                 
-                                print ("------decel: \(theDecel), distance to target is \(distanceToTarget), velocity is \(liveData.velocityCurrent), expected frames = \(theDecelFrames)")
-                            }
+                                 }
                         } else {
                             
                             // ---------------------------------------------
@@ -542,15 +556,15 @@ class TrajectoryHandler {
             }
         }
         
-        if abs(liveData.velocityCurrent - oldVelocity) > channel.channelDataSettings.maximumAcceleration {
+        if abs(liveData.velocityCurrent - oldVelocity) > (channel.channelDataSettings.maximumAcceleration + 0.01){
             print ("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ acceleration exception: old vel \(oldVelocity) new vel \(liveData.velocityCurrent)")
         }
         
         liveData.positionActual += liveData.velocityCurrent
-        if (channel.channelDataPersistent.channelInterfaceID == 5) {
+       // if (channel.channelDataPersistent.channelInterfaceID == 5) {
             print (" -- velocity: \(liveData.velocityCurrent), position: \(liveData.positionActual)")
         
-        }
+       // }
         
     }
     

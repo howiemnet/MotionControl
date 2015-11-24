@@ -53,17 +53,45 @@ class BlenderPlaybackController: NSObject {
         
     }
     
-    @IBAction func playbackPositionSlider(sender: NSSlider) {
-        currentFrame = sender.integerValue
-        currentFrameField.integerValue = currentFrame
-        executiveController.setCurrentChannelPositions(getChannelPosDictForFrame(currentFrame))
-        
+    
+    
+    @IBAction func frameBack(sender: NSButton) {
+        if currentFrame > firstFrame {
+            currentFrame -= 1
+            currentFrameField.integerValue = currentFrame
+            executiveController.setCurrentChannelPositions(getChannelPosDictForFrame(currentFrame))
+
+        }
     }
+    
+    
+    @IBAction func frameFwd(sender: NSButton) {
+        if currentFrame < lastFrame {
+            currentFrame += 1
+            currentFrameField.integerValue = currentFrame
+            executiveController.setCurrentChannelPositions(getChannelPosDictForFrame(currentFrame))
+            
+        }
+
+    }
+    
+    
+    
+    
+    @IBAction func playbackPositionSlider(sender: NSSlider) {
+        if (sender.integerValue != currentFrame) {
+            currentFrame = sender.integerValue
+            currentFrameField.integerValue = currentFrame
+            executiveController.setCurrentChannelPositions(getChannelPosDictForFrame(currentFrame))
+        }
+    }
+    
+    
     
     func getChannelPosDictForFrame(frame: Int) -> [Int:Double] {
         var channelSet: [Int:Double] = [:]
         for (channel,data) in motionData {
-            channelSet[channel] = data[frame]
+            channelSet[channel] = data[frame - firstFrame]
         }
         return channelSet
     }

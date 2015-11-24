@@ -11,7 +11,7 @@ import Foundation
 class RemoteDisplay: NSObject, ORSSerialPortDelegate {
     
     var displayConnected = false
-    var serialPort: ORSSerialPort!
+    var serialPort: ORSSerialPort? = nil
     
     // -------------------------------------------------------------------
     //
@@ -31,9 +31,11 @@ class RemoteDisplay: NSObject, ORSSerialPortDelegate {
     
     func initialiseDisplay(thePath: String) {
         serialPort = ORSSerialPort(path: thePath)
-        serialPort.baudRate = 115200
-        serialPort.delegate = self
-        serialPort.open()
+        if serialPort != nil {
+            serialPort!.baudRate = 115200
+            serialPort!.delegate = self
+            serialPort!.open()
+        }
     }
     
     func updateDisplayStatus(string: String) {
@@ -54,7 +56,7 @@ class RemoteDisplay: NSObject, ORSSerialPortDelegate {
         let data = string.dataUsingEncoding(NSUTF8StringEncoding)
         if data != nil {
 
-            self.serialPort.sendData(data!)
+            self.serialPort!.sendData(data!)
         }
     }
     
