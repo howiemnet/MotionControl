@@ -24,6 +24,9 @@ the various microcontrollers involved.
 That said, it's my intention to try and tidy this up and document it well enough that the project will be reproducable, in the 
 hope that others may be able to hack together motion control systems without having to re-invent these wheels.
 
+
+![Screenshot](http://i.imgur.com/SI0pRMs.png)
+
 A lot more documentation will come: this is just the first commit to get it all up there - feel free to poke around and laugh
 at my appalling coding style. Just keep it to yourself, y'all
 
