@@ -8,9 +8,9 @@ seem to work. Appearances may be deceptive.
 To see it working, watch this: https://www.youtube.com/watch?v=rWuKmWKicro
 
 Firmwares for the various axes:
-Teensy LC / Stepper motor:  https://github.com/howiemnet/h-moco-STEPPER-Teensy
-Teensy LC / DC Servo motor:  https://github.com/howiemnet/h-moco-DCSERVO-Teensy
-Arduino / Canon Lens AF:   https://github.com/howiemnet/h-moco-LENS-Arduino
+* Teensy LC / Stepper motor:  https://github.com/howiemnet/h-moco-STEPPER-Teensy
+* Teensy LC / DC Servo motor:  https://github.com/howiemnet/h-moco-DCSERVO-Teensy
+* Arduino / Canon Lens AF:   https://github.com/howiemnet/h-moco-LENS-Arduino
 
 Blender project coming soon (it's equally horrifying)
 
