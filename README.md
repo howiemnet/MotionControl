@@ -1,5 +1,6 @@
 # h's homemade Motion Control: the Mac app / server
-Introduction
+
+##Introduction
 
 This is the code for a Mac app, written in Swift, that acts as a motion control server. With the appropriate hardware 
 (see below) and with wind in just the right direction, a fully functioning robotic camera motion control system may
@@ -12,12 +13,14 @@ Firmwares for the various axes:
 * Teensy LC / DC Servo motor:  https://github.com/howiemnet/h-moco-DCSERVO-Teensy
 * Arduino / Canon Lens AF:   https://github.com/howiemnet/h-moco-LENS-Arduino
 
-Blender project coming soon (it's equally horrifying)
+Blender project coming soon (it's equally horrifying), but until then:
 
-Warnings
+* Example python code for generating a CSV animation file from Blender: https://gist.github.com/howiemnet/8f617ff7b4845161fe7ebeb64ceba5dd
 
-This code contains more bugs than working lines of code. I will not be offering support or help in understanding
-what the hell is going on beyond what I can get written up for my blog. It's just too big and complex a project: it relies 
+##Warnings
+
+This code contains approximately 7 bugs per line of code. I will not be offering support or help in understanding
+what the hell is going on beyond what I can get written up for my blog, but I will update this as frequently as life permits. Individual support requests may be met with stoney silence, for which I apologise in advance. It's just too big and complex a project: it relies 
 on not just this app working correctly, but the right hardware wiring up, and the appropriate firmware running on
 the various microcontrollers involved.
 
@@ -28,7 +31,7 @@ hope that others may be able to hack together motion control systems without hav
 ![Screenshot](http://i.imgur.com/SI0pRMs.png)
 
 A lot more documentation will come: this is just the first commit to get it all up there - feel free to poke around and laugh
-at my appalling coding style. Just keep it to yourself, y'all
+at my appalling coding style.
 
 :)
 
