@@ -82,6 +82,8 @@
 		078A57701BF33FBE00DA1E3C /* RemoteDisplay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteDisplay.swift; sourceTree = "<group>"; };
 		078C362D1B668738003A0AAD /* SequencerTableCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SequencerTableCellView.swift; sourceTree = "<group>"; };
 		078C36311B668865003A0AAD /* Keyframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keyframe.swift; sourceTree = "<group>"; };
+		078EFFF51D3CC97200C0A3E5 /* BlenderPlayback.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = BlenderPlayback.csv; sourceTree = "<group>"; };
+		078EFFF61D3CC97200C0A3E5 /* DeviceChannelLibrary.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = DeviceChannelLibrary.plist; sourceTree = "<group>"; };
 		07A564111BD0095B00D6C27B /* hid.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = hid.c; sourceTree = "<group>"; };
 		07A564121BD0095B00D6C27B /* hid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hid.h; sourceTree = "<group>"; };
 		07A564181BD0241A00D6C27B /* ChannelHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelHandler.swift; sourceTree = "<group>"; };
@@ -314,6 +316,8 @@
 		E7364FB31B58ED550066632C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				078EFFF51D3CC97200C0A3E5 /* BlenderPlayback.csv */,
+				078EFFF61D3CC97200C0A3E5 /* DeviceChannelLibrary.plist */,
 				E7364FB41B58ED550066632C /* Info.plist */,
 			);
 			name = "Supporting Files";
